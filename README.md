@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MY-RAINBOWKIT/
+├── .next/                # Next.js构建产物，无需改动
+├── node_modules/         # 依赖包，无需改动
+├── public/               # 静态资源（图片、字体等）
+├── src/                  # 所有业务代码统一收拢在这里
+│   ├── app/              # 仅存放Next.js路由相关内容
+│   │   ├── globals.css   # 全局样式
+│   │   ├── layout.tsx    # 根布局（在这里引入wagmi Provider）
+│   │   ├── page.tsx      # 首页
+│   │   └── [你的其他路由文件夹]/
+│   ├── components/       # 全局通用组件（UI组件、业务组件）
+│   ├── contracts/        # 合约专属目录
+│   │   ├── abis/         # 按合约拆分的ABI文件
+│   │   ├── config.ts     # 合约地址、链配置
+│   │   └── types.ts      # 合约相关TS类型
+│   ├── hooks/            # 全局自定义hooks（合约交互、通用业务hooks）
+│   ├── lib/              # 核心配置、第三方SDK初始化
+│   │   └── wagmi.ts      # wagmi+rainbowkit核心配置
+│   ├── types/            # 全局TS类型定义
+│   └── utils/            # 纯工具函数（地址格式化、链上数据处理等，可选）
+├── .env.development      # 开发环境变量
+├── .env.production       # 生产环境变量
+├── .env.local            # 本地敏感变量（不提交Git）
+├── .gitignore            # Git忽略配置
+├── eslint.config.mjs     # ESLint代码规范配置
+├── next.config.ts        # Next.js框架配置
+├── package.json          # 依赖与脚本配置
+├── pnpm-lock.yaml        # pnpm依赖锁文件
+├── postcss.config.mjs    # PostCSS配置（TailwindCSS用）
+├── README.md             # 项目说明文档
+├── tsconfig.json         # TypeScript配置
