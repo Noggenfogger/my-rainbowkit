@@ -29,3 +29,5 @@ MY-RAINBOWKIT/
 ├── postcss.config.mjs    # PostCSS配置（TailwindCSS用）
 ├── README.md             # 项目说明文档
 ├── tsconfig.json         # TypeScript配置
+
+MetaMask 连接器依赖 pnpm add @metamask/connect-evm
