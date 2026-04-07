@@ -28,14 +28,17 @@ export function Providers(props: {
           //   darkMode: darkTheme(),
           // }}
           theme={darkTheme({
-            ...darkTheme.accentColors.purple,  // 主题强调色预设， 或者下两行自定义
+            ...darkTheme.accentColors.purple, // 主题强调色预设， 或者下两行自定义
             // accentColor: "#7b3fe4",
             // accentColorForeground: "white",
             borderRadius: "small",
             fontStack: "system",
             overlayBlur: "small",
           })}
-          /* theme={darkTheme()}   紧凑模态框添加： modalSize="compact"*/
+          // theme={darkTheme()}
+          // modalSize="compact"    //紧凑模态框
+          // initialChain={1}       //初始链配置：用链ID
+          // initialChain={mainnet} //初始链配置：用链对象
         >
           {props.children}
         </RainbowKitProvider>
