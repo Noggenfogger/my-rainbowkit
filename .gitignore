@@ -19,6 +19,7 @@ dist/
 .env.test.local
 .env.production.local
 .env.*.local
+.env.production
 
 # 4. 通用日志文件
 npm-debug.log*

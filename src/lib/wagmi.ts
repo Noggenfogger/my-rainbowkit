@@ -2,32 +2,34 @@ import { cookieStorage, createConfig, createStorage, http } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
 import { injected, metaMask, walletConnect } from "wagmi/connectors";
 
+// 申请projectId: https://dashboard.reown.com/sign-in
+const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID;
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
 export function getConfig() {
   return createConfig({
     ssr: true,
-
     storage: createStorage({
       storage: cookieStorage,
     }),
-
     chains: [mainnet, sepolia],
+    transports: {
+      [mainnet.id]: http(), // 企业推荐私有RPC
+      [sepolia.id]: http(),
+    },
     connectors: [
       injected(),
       metaMask(),
       // walletConnect({
-      //   projectId: "9fa45c18f4e4bb63f39ed9de4ffdcae6", // 申请projectId: https://dashboard.reown.com/sign-in
-      //   // metadata: {
-      //   //   name: "Thornscraft_Test",
-      //   //   description: "A Web3 DApp built with Next.js and wagmi",
-      //   //   url: "http://localhost:3000", // 本地开发填 http://localhost:3000，生产环境填你的正式域名（如 https://your-dapp.com
-      //   //   icons: ["https://avatars.githubusercontent.com/u/179229932"],
-      //   // },
+      //   projectId,
+      //   metadata: {
+      //     name: "Thornscraft_Test",
+      //     description: "A Web3 DApp built with Next.js and wagmi",
+      //     url: siteUrl,
+      //     icons: ["https://avatars.githubusercontent.com/u/179229932"],
+      //   },
       // }),
     ],
-    transports: {
-      [mainnet.id]: http(),
-      [sepolia.id]: http(),
-    },
   });
 }
 

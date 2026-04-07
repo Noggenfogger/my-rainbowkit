@@ -31,3 +31,7 @@ MY-RAINBOWKIT/
 ├── tsconfig.json         # TypeScript配置
 
 MetaMask 连接器依赖 pnpm add @metamask/connect-evm
+
+## rainbowkit
+
+要将您的模态框尺寸设置为紧凑，只需在RainbowKitProvider中添加modalSize="compact"
