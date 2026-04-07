@@ -35,3 +35,7 @@ MetaMask 连接器依赖 pnpm add @metamask/connect-evm
 ## rainbowkit
 
 要将您的模态框尺寸设置为紧凑，只需在RainbowKitProvider中添加modalSize="compact"
+
+## wagmi.ts的RPC配置
+
+megathron@live.com Abyss@85740524@
