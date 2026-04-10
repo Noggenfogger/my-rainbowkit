@@ -25,6 +25,7 @@ export function Providers(props: {
     <WagmiProvider config={config} initialState={props.initialState}>
       <QueryClientProvider client={queryClient}>
         <RainbowKitProvider
+          showRecentTransactions={true} //  🔥 开启最近交易功能
           // 自适应主题（还可以自定义自适应主题）
           // theme={{
           //   lightMode: lightTheme(),
@@ -39,11 +40,11 @@ export function Providers(props: {
             overlayBlur: "small",
           })}
           // theme={darkTheme()}
-          // modalSize="compact"    //紧凑模态框
-          // initialChain={1}       //初始链配置：用链ID
-          // initialChain={mainnet} //初始链配置：用链对象
-          // locale="zh-CN"         //rainbowkit本地化
-          // locale={locale}        //rainbowkit本地化：整个网站多语言
+          // modalSize="compact"    // 紧凑模态框
+          // initialChain={1}       // 初始链配置：用链ID
+          // initialChain={mainnet} // 初始链配置：用链对象
+          // locale="zh-CN"         // rainbowkit本地化
+          // locale={locale}        // rainbowkit本地化：整个网站多语言
         >
           {props.children}
         </RainbowKitProvider>

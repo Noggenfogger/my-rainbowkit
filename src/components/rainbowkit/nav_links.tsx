@@ -7,8 +7,8 @@ import clsx from "clsx";
 const links = [
   { name: "Home", href: "/rainbowkit" },
   {
-    name: "ConnectButton",
-    href: "/rainbowkit/connectbutton",
+    name: "RecentTransaction",
+    href: "/rainbowkit/recent-transaction",
   },
   { name: "Customers", href: "/rainbowkit/customers" },
 ];
