@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   useConnect,
   useConnection,
@@ -19,6 +20,12 @@ function ConnectWallet() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen w-full gap-8 p-4 mx-auto box-border">
+      <h2>跳转到rainbowkit主页</h2>
+      <Link href="/rainbowkit">
+        {/* 普通按钮 */}
+        <button>前往rainbowkit</button>
+      </Link>
+
       <h2>Connect</h2>
       {connectors.map((connector) => (
         <button

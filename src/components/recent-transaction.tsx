@@ -16,3 +16,4 @@ export function RecentTransfer() {
 
   return <button onClick={handleSend}>发送交易</button>;
 }
+ 

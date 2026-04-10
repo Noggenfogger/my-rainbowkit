@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "@rainbow-me/rainbowkit/styles.css";
 import {
   ConnectButton,
@@ -11,6 +12,11 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 export default function Page() {
   return (
     <>
+      <h2>跳转到rainbowkit主页</h2>
+      <Link href="/">
+        {/* 普通按钮 */}
+        <button>前往主页home</button>
+      </Link>
       <h2>这是rainbowkit测试页</h2>
       <ConnectButton />
       <h3>label标签</h3>
