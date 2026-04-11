@@ -2,6 +2,32 @@ import { cookieStorage, createConfig, createStorage, http } from "wagmi";
 import { mainnet, sepolia } from "wagmi/chains";
 import { injected, metaMask, walletConnect } from "wagmi/connectors";
 import { Chain } from "@rainbow-me/rainbowkit";
+import { connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  rainbowWallet,
+  walletConnectWallet,
+  baseAccount,
+  metaMaskWallet,
+  injectedWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+
+// 自定义钱包列表
+// const customRainbowConnectors = connectorsForWallets(
+//   [
+//     {
+//       groupName: "Recommended",
+//       wallets: [rainbowWallet, injectedWallet],
+//     },
+//     {
+//       groupName: "Suggested",
+//       wallets: [metaMaskWallet],
+//     },
+//   ],
+//   {
+//     appName: "Thornscraft_Test",
+//     projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID,
+//   },
+// );
 
 export function getConfig() {
   return createConfig({
@@ -22,6 +48,7 @@ export function getConfig() {
         retryDelay: 1000,
       }),
     },
+    // connectors: customRainbowConnectors,
     connectors: [
       injected(),
       metaMask(),
